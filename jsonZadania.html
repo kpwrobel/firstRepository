@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lista Zakupow</title>
+    <script src="jsonZadania.js"></script>
+  </head>
+  <body>
+    <form>
+                    Nazwa produktu:<br>
+                    <input id="name" type="text" name="Nazwa produktu"><br>
+                    Ilosc:<br>
+                    <input id="quantity" type="text" name="Ilosc">
+                    <button id="submit">Dodaj</button>
+    </form>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th>Nazwa produktu</th>
+          <th>Ilosc</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>mleko</td>
+              <td>2 l</td>
+              <td>
+              <button>+</button><button>-</button>
+              </td>
+            </tr>
+        <tr>
+          <td>maslo</td>
+          <td>1 szt.</td>
+          <td>
+            <button>+</button><button>-</button>
+            </td>
+        </tr>
+        <tr>
+          <td>platki sniadaniowe</td>
+          <td>1 szt.</td>
+          <td>
+            <button>+</button><button>-</button>
+            </td>
+        </tr>
+        <tr>
+          <td>makaron</td>
+          <td>4 szt.</td>
+          <td>
+            <button>+</button><button>-</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
