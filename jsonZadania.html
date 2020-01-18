@@ -9,49 +9,56 @@
   </head>
   <body>
     <form>
-                    Nazwa produktu:<br>
-                    <input id="name" type="text" name="Nazwa produktu"><br>
-                    Ilosc:<br>
-                    <input id="quantity" type="text" name="Ilosc">
-                    <button id="submit">Dodaj</button>
+      <span> Formularz dodawania</span><br />
+      Nazwa produktu:<br />
+      <input id="name" type="text" name="Nazwa produktu" /><br />
+      Ilosc:<br />
+      <input id="quantity" type="text" name="Ilosc" />
+      <button id="submit">Dodaj</button>
     </form>
-    <br>
-    <br>
+    <hr/>
+    <form>
+            <span> Formularz edycji</span><br />
+      <input type="text" name="id" id="e_id" disabled="disabled" /><br />
+      Nazwa produktu:<br />
+      <input id="e_name" type="text" name="Nazwa produktu" /><br />
+      Ilosc:<br />
+      <input id="e_quantity" type="text" name="Ilosc" />
+      <button id="e_submit">Zapisz</button>
+    </form>
+    <hr/>
+    <br />
+    <br />
     <table>
       <thead>
         <tr>
+          <th>Lp</th>
           <th>Nazwa produktu</th>
           <th>Ilosc</th>
+          <th>Id</th>
+          <th>Action</th>
         </tr>
       </thead>
-      <tbody>
-          <tr>
-              <td>mleko</td>
-              <td>2 l</td>
-              <td>
-              <button>+</button><button>-</button>
-              </td>
-            </tr>
+      <tbody id="tbodyRow">
+        <tr>
+          <td>mleko</td>
+          <td>2 l</td>
+          <td><button>+</button><button>-</button></td>
+        </tr>
         <tr>
           <td>maslo</td>
           <td>1 szt.</td>
-          <td>
-            <button>+</button><button>-</button>
-            </td>
+          <td><button>+</button><button>-</button></td>
         </tr>
         <tr>
           <td>platki sniadaniowe</td>
           <td>1 szt.</td>
-          <td>
-            <button>+</button><button>-</button>
-            </td>
+          <td><button>+</button><button>-</button></td>
         </tr>
         <tr>
           <td>makaron</td>
           <td>4 szt.</td>
-          <td>
-            <button>+</button><button>-</button>
-            </td>
+          <td><button>+</button><button>-</button></td>
         </tr>
       </tbody>
     </table>
