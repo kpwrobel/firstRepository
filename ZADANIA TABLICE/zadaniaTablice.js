@@ -40,7 +40,7 @@ function isArray(t) {
     return Array.isArray(t); //wykorzystanie wbudowanej metody w JS;
     //sprawdzenie czy przekazywana zmienna jest tablica;
     //return (typeof t === 'object' && t.length !== undefined) - próba ręcznego zapisania powyzszej funkcji, która jednak zwróci true takze dla obiektow z key length;
-    
+
 }
 var t = [2, 56, 'dfdfdfd'];
 var r = isArray(t);
@@ -54,16 +54,16 @@ console.log(r, Array);
 function odwrotna(p) {
     if (true === isArray(p)) {
         var tab = [];
-            //przeglądanie tablicy od tyłu zawsze index mniejszy o 1 od rozmiaru;
+        //przeglądanie tablicy od tyłu zawsze index mniejszy o 1 od rozmiaru;
         for (let i = (p.length - 1); i >= 0; i--) {
             console.log(i);
             //dekrementacja na powyzszym przykladzie;
 
             //-- w przypadku standardowej inkrementacji poslugujemy sie na tym przykladzie metoda dodawania na poczatek tablicy: tab.unshift(p[i]); //@info dodanie elementu na poczatek tablicy;
-            
+
             //tab[(p.length-1)-i] = p[i]; //@info dodanie pod index odwrócony
             //uniwersalne ustawianie elementow tablicy tab tak by uzyskac odwrocona tablice p;
-            
+
             //-- w przypadku inkrementacji odwórconej
             tab.push(p[i]);
 
@@ -80,9 +80,9 @@ function odwrotna(p) {
 function init7(l) {
     var tab = [];
     tab[0] = 7;
-//    tab[1] = tab[0] + 7;
-//    tab[2] = tab[1] + 7;
-    
+    //    tab[1] = tab[0] + 7;
+    //    tab[2] = tab[1] + 7;
+
     for (let i = 1; i < l; i++) {
         tab[i] = tab[i - 1] + 7;
         // tab.push() -- dodaje element na koniec tablicy
@@ -203,14 +203,14 @@ i elementów tablicy o losowej wartości w zakresie min – max*/
 
 function triple(min, max, count) {
     var tab = [];
-        for (let index = 0; index < count; index++) {
-       var liczba = Math.floor(Math.random() * (max - min)) + min;
-            //Math.random - losowanie przypadkowej liczby z przedzialu 0-1; 0% do 100%
-            // (20 - 25) => 5 * 0.25 = 1.25 => flor(1,25) => 1 + min
-            // 5 * 66% = 3,3 => flor(3,3) => 3 + min
-            tab.push(liczba); //wyrzuca mi blad w consoli mowiac ze .push nie jest funkcja; nie umiem obejsc tego bledu;
+    for (let index = 0; index < count; index++) {
+        var liczba = Math.floor(Math.random() * (max - min)) + min;
+        //Math.random - losowanie przypadkowej liczby z przedzialu 0-1; 0% do 100%
+        // (20 - 25) => 5 * 0.25 = 1.25 => flor(1,25) => 1 + min
+        // 5 * 66% = 3,3 => flor(3,3) => 3 + min
+        tab.push(liczba); //wyrzuca mi blad w consoli mowiac ze .push nie jest funkcja; nie umiem obejsc tego bledu;
     }
-return tab;
+    return tab;
 }
 var tCount = 5;
 var tMin = 23;
@@ -225,7 +225,7 @@ który jest stringiem znaków podzielonym znakami ’|’ (np. ’pies|kot|lis
 zadaniem funkcji jest zwrócić tablicę z elementami [’pies’,’kot’,’lis’]*/
 
 function sth(value) {
-    console.log(value[0],value[1],value[2],value[3]);
+    console.log(value[0], value[1], value[2], value[3]);
     var noString = value.split('|');
     return noString;
 }
@@ -240,8 +240,8 @@ console.log(sth("pies|kot|lis"));
 function cloneArray(tab) {
     var clone = [];
     for (let index = 0; index < tab.length; index++) {
-       clone.push(tab[index]);
-    } 
+        clone.push(tab[index]);
+    }
     //clone = tab.slice(0,tab.length);
 
     return clone;
@@ -255,7 +255,7 @@ console.log(myArray, myArray2);
 //zad 1.,2. str. 45 
 //Stwórz tablicę dwuwymiarową o rozmiarze 5 na 5 i uzupełnij ją zerami
 
-function matrix(l,w) {
+function matrix(l, w) {
     var table = [];
     for (let i = 0; i < l; i++) {
         var table3 = [];
@@ -267,7 +267,7 @@ function matrix(l,w) {
     return table;
 }
 
-var m5 = matrix(5,5);
+var m5 = matrix(5, 5);
 console.log(m5);
 
 //3. Przerób powyższy przykład tak aby tablica wyglądała następująco:
@@ -279,7 +279,7 @@ console.log(m5);
 [0, 0, 0, 0, 1]] => 4, 4
 */
 
-function copyMatrix(matrix){
+function copyMatrix(matrix) {
     var copy = [];
     for (let i = 0; i < matrix.length; i++) {
         console.log(matrix[i]);
@@ -290,21 +290,142 @@ function copyMatrix(matrix){
 }
 
 function matrix1(matrix) {
-   var c = copyMatrix(matrix);
-   for (let index = 0; index < c.length; index++) {
-       c[index][index] = 1;
-}
-       return c;
+    var c = copyMatrix(matrix);
+    for (let index = 0; index < c.length; index++) {
+        c[index][index] = 1;
+    }
+    return c;
 
 }
 console.log(m5, matrix1(m5));
 
 
 
-// 4. *Stwórz tablicę dwuwymiarową o rozmiarze N x N i uzupełnij jak na przykładzie: [ [ 1, 0, 0 , 0, 2 ],
-// [ 0,1, 0,2,0], [ 0,0,'x',0,0],
-// [ 0, 2, 0 , 1, 0 ], [ 2,0, 0,0,1]]
+// 4. *Stwórz tablicę dwuwymiarową o rozmiarze N x N i uzupełnij jak na przykładzie: 
+[
+    [1, 0, 0, 0, 2],
+    [0, 1, 0, 2, 0],
+    [0, 0, 'x', 0, 0],
+    [0, 2, 0, 1, 0],
+    [2, 0, 0, 0, 1]]
+
+/*
+[[1, 0, 0, 0, 2],=> 0, 0  => tab[0][0] = 1;   => tab[0][4] = 2
+[0, 1, 0, 2, 0], => 1, 1  => tab[1][1] = 1;   => tab[1][3] = 2
+[0, 0, 1, 0, 0], => 2, 2  => tab[2][2] = 1; => tab[2][2] = 'x'
+[0, 2, 0, 1, 0], => 3, 3  => tab[3][3] = 'x';   => tab[3][1] = 2
+[2, 0, 0, 0, 1]] => 4, 4  => tab[4][4] = 1;   => tab[4][0] = 2
+[0, 2, 0, 1, 0], => 3, 3  => tab[5]5] = 1;   => tab[5][1] = 2
+[2, 0, 0, 0, 1]] => 4, 4  => tab[6][6] = 1;   => tab[6][0] = 2
+
+*/
+
+// 5/2 = 2,5 => 2
+// 7/2 = 3,5 => 3
+function macierz2(n) {
+    let macierz = matrix(n, n);
+    //console.log(macierz);
+    for (let index = 0; index < n; index++) {
+        if (Math.floor(n / 2) === index) {
+            macierz[index][index] = 'x';
+        } else {
+            macierz[index][index] = 1;
+            macierz[index][(n - 1) - index] = 2;
+        }
+    }
+    return macierz;
+}
+var m3 = macierz2(11);
+console.log(m3);
+
 // 5. Napisz funkcję, która przyjmuje dwie tablice [n]x[n] i wykonuje operacje dodawania macierzy
+
+var a1 = [[1, 1, 6],
+[1, 1, 8],
+[1, 1, 8]];
+var b1 = [[4, 2, 3],
+[4, 7, 0],
+[8, 4, 3]
+];
+
+function addMatrix(a, b) {
+    if (a.length !== b.length) {
+        return null;
+    };
+
+    var n = a.length; // b.length
+    let c = matrix(n, n);
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a[i].length; j++) {
+            //a[i][j]
+            //b[i][j]
+            c[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    return c;
+}
+
+var sum = addMatrix(a1, b1);
+console.log(sum);
+
 // 6. Napisz funkcję, która przyjmuje dwie tablice [n]x[n] i wykonuje operacje odejmowania macierzy
-// 7. Stwórz funkcję, która przyjmuje tablicę wielowymiarową i zwraca nową tablice jednowymiarową z wszystkim elementami np. Input: [[1,2,3][6,3,8]] output: [1,2,3,6,3,8]
+
+function subtractMatrix(a, b) {
+    if (a.length !== b.length) {
+        return null;
+    };
+
+    var n = a.length; // b.length
+    let c = matrix(n, n);
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a[i].length; j++) {
+            //a[i][j]
+            //b[i][j]
+            c[i][j] = a[i][j] - b[i][j];
+        }
+    }
+
+    return c;
+}
+
+var subtract = subtractMatrix(a1, b1);
+console.log(subtract);
+
+// 7. Stwórz funkcję, która przyjmuje tablicę wielowymiarową 
+//i zwraca nową tablice jednowymiarową z wszystkim elementami np. 
+
+/*Input: [[1,2,3],[6,3,8]] 
+Output: [1,2,3,6,3,8]*/
+
+function reduce(p) {
+    let tableMono = [];
+    for (let index = 0; index < p.length; index++) {
+        for (let j = 0; j < p[index].length; j++) {
+            let newEl = p[index][j];
+            tableMono.push(newEl);
+        }
+    }
+    return tableMono;
+};
+
+let redCon = reduce(subtract);
+console.log(redCon);
+
 // 8. *Napisz funkcje która wygeneruje tablicę: tab[4][5][6]
+
+function cuboidGen(a, b, c) {
+    let newCuboid = [];
+    for (let x = 0; x < a; x++) {
+        newCuboid[x] = [];        
+        for (let y = 0; y < b; y++) {
+            newCuboid[x][y] = [];
+            for (let z = 0; z < c; z++) {
+                newCuboid[x][y][z] = x + y + z;
+            }
+        }
+    }
+    return newCuboid;
+}
+
+console.log(cuboidGen(4,5,6));
